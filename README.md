@@ -14,5 +14,5 @@ Install Rtac with cargo
 ## Usage
 
 ```bash
-  sudo rtac [host] [port]
+  sudo rtac [listen-ip] [port]
 ```
