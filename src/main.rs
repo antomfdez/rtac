@@ -1,12 +1,10 @@
 use std::io::{Read, stdout, Write};
 use std::net::TcpListener;
-use std::net::TcpStream;
 use std::env;
 
 pub fn run(bind_host: &String, port: &String) -> Result<(), String> {
     let addr = format!("{}:{}", bind_host, port);
     let listener = TcpListener::bind(addr.clone()).map_err(|_| format!("Failed to bind to {}", addr))?;
-    let mut stream: i16;
 
     for stream in listener.incoming() {
         match stream {
